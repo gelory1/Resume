@@ -59,5 +59,6 @@ a{
     display: block;
 }
 .head  nav  ul > li > a:hover{
+    border-top: 3px solid transparent;
     border-bottom: 4px solid #E8676B;
 }
