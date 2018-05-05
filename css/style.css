@@ -1,21 +1,63 @@
 body{
     background-color: black;
+    color: white;
+    margin: 0;
 }
-.clearfix{
+a{
+    color: inherit;
+    text-decoration: none;
+}
+.clearfix::after{
     content: " ";
     display: block;
     clear: both;
 }
+.head{
+    padding:20px;
+}
 .head  a{
     float: left;
+    padding-top: 3px;
+    padding-bottom: 3.4px;
 }
 .head  nav{
     float: right;
+    padding-top: 4px;
+    padding-bottom: 0.8px;
+}
+.head  nav  ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 .head  nav  ul > li{
     float: left;
+    
+}
+.head .logo span{
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium';
+}
+.head .logo .rs{
+    color: #E8676B;
+}
+.head .logo .card{
+    color: #9A9DA2;
+    margin-left: 4px;
+    font-weight: bold;
 }
 .head  nav  ul > li > a{
     font-size: 14px;
     font-weight: bold;
+    margin-left: 22px;
+    margin-right: 22px;
+    color: #858A90;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    display: block;
+}
+.head  nav  ul > li > a:hover{
+    border-bottom: 4px solid #E8676B;
 }
