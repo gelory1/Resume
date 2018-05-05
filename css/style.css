@@ -60,4 +60,5 @@ a{
 }
 .head  nav  ul > li > a:hover{
     border-bottom: 4px solid #E8676B;
+    border-top: 3px solid transparent;
 }
