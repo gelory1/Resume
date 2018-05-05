@@ -1,1 +1,21 @@
-h1{color: red;}
+body{
+    background-color: black;
+}
+.clearfix{
+    content: " ";
+    display: block;
+    clear: both;
+}
+.head  a{
+    float: left;
+}
+.head  nav{
+    float: right;
+}
+.head  nav  ul > li{
+    float: left;
+}
+.head  nav  ul > li > a{
+    font-size: 14px;
+    font-weight: bold;
+}
