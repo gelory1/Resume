@@ -266,7 +266,7 @@ section.productions > nav{
 }
 section.productions nav .bar{
     height: 5px;
-    background-color: #FAE1E1;
+    background-color: white;
     border-radius: 2px;
     margin-top: 10px;
 }
