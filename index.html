@@ -84,40 +84,95 @@
         </a>
       </footer>
     </div>
-    <a href="#">下载简历</a>
-    <p>
-      我是耿朋，是一名前端开发设计工程师，
-      擅长于CSS、JS、AJAX、Vue、React等前端开发语言及开发框架。
+    <div class="button-wrapper">
+      <a class="button" href="/index.html" target="_blank" download>下载网页版简历</a>
+    </div>
+    <p class="selfIntroduction">
+      耿朋，前端开发设计工程师，
+      擅长于CSS、Javascript、AJAX、Vue、React等前端开发语言及开发框架。<br>
+      技能：前端开发，Rails 开发，Node.js 开发。
     </p>
   </main>
-  <section>
+  <section class="skills">
     <h2>
       技能
     </h2>
-    <ul>
-      <li>HTML 5 &amp; CSS 3</li>
-      <li>JavaScript</li>
-      <li>jQuery</li>
-      <li>Vue</li>
-      <li>React</li>
-      <li>HTTP</li>
+    <ul class="skills-inner clearfix">
+      <li>
+        <h3>
+          HTML 5 &amp; CSS 3
+        </h3>
+        <div class="progressBar">
+          <div class="progress" style="width: 90%"></div>
+        </div>
+      </li>
+      <li>
+        <h3>JavaScript</h3>
+        <div class="progressBar">
+            <div class="progress" style="width: 75%"></div>
+        </div>
+      </li>
+      <li>
+        <h3>jQuery</h3>
+          <div class="progressBar">
+              <div class="progress" style="width: 80%"></div>
+          </div>
+      </li>
+      <li>
+        <h3>Vue</h3>
+          <div class="progressBar">
+              <div class="progress" style="width: 70%"></div>
+          </div>
+      </li>
+      <li>
+        <h3>React</h3>
+          <div class="progressBar">
+              <div class="progress" style="width: 70%"></div>
+          </div>
+      </li>
+      <li>
+        <h3>HTTP</h3>
+          <div class="progressBar">
+              <div class="progress" style="width: 60%"></div>
+          </div>
+      </li>
     </ul>
   </section>
-  <section>
+  <section class="productions">
     <h2>
       作品集
     </h2>
     <nav>
-      <ul>
-        <li>全部作品</li>
-        <li>框架作品</li>
-        <li>原生js&amp;css作品</li>
+      <ul class="clearfix">
+        <li id="pro1">全部作品</li>
+        <li id="pro2">框架作品</li>
+        <li id="pro3">原生js&amp;css作品</li>
       </ul>
+      <div class="bar">
+        <div id="barPro" class="bar-inner1"></div>
+      </div>
     </nav>
+    <script>
+      pro1.onclick=function(){
+        barPro.className="bar-inner1"
+      }
+      pro2.onclick=function(){
+        barPro.className="bar-inner2"
+      }
+      pro3.onclick=function(){
+        barPro.className="bar-inner3"
+      }
+    </script>
     <div class="jobs">
-      <div class="big"></div>
-      <div class="small"></div>
-      <div class="small"></div>
+      <div class="big">
+        <img src="./img/1.jpg">
+      </div>
+      <div class="small1">
+          <img src="./img/2.jpg">
+      </div>
+      <div class="small2">
+          <img src="./img/3.jpg">
+      </div>
     </div>
   </section>
 </body>
