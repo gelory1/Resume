@@ -6,6 +6,52 @@ body{
     margin: 0;
     padding: 0;
 }
+.loading{
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: #888888;
+    z-index: 1;
+    border:1px solid red;
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+  }
+.loading::before,.loading::after{
+    content:'';
+    background-color:black;
+    position:absolute;
+    width: 0;
+    height: 0;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+    border-radius:50%;
+    animation:s 1s linear infinite;
+  }
+.loading::after{
+    animation-delay:0.5s;
+  }
+  .loading.active{
+      display: block;
+  }
+@keyframes s{
+    0%{
+      width:0px;
+      height:0px;
+      opacity:1;
+    }
+    100%{
+      width:100px;
+      height:100px;
+      opacity:0;
+    }
+}
 a{
     color: inherit;
     text-decoration: none;
@@ -24,9 +70,17 @@ h1,h2,h3,h4,h5,h6{
 .head{
     position: fixed;
     width: 100%;
+    z-index: 1;
 }
 .head .headInner{
     padding: 20px;
+    transition: all 0.5s;
+}
+.head .headInner.active{
+    background-color: white;
+    color: #3D4451;
+    padding: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
 }
 .head  a{
     float: left;
@@ -43,8 +97,57 @@ h1,h2,h3,h4,h5,h6{
     padding: 0;
     list-style: none;
 }
-.head  nav  ul > li{
+.head  nav > ul > li{
     float: left;
+    position: relative;
+    margin-left: 22px;
+    margin-right: 22px;
+    position: relative;
+}
+.head  nav > ul > li .menuSelect{
+    display: none;
+    margin-top: 3px;
+    padding: 10px 10px;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    white-space: nowrap;
+    background-color: white;
+    color: #3D4451;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+.head  nav > ul > li.active .menuSelect{
+    display: block;
+    animation: submenuSlide .3s;
+    cursor: pointer;
+}
+@keyframes submenuSlide{
+    0%{
+      margin-right: 100%;
+    }
+    100%{
+      margin-right: 0%;
+    }
+  }
+.head  nav > ul > li.active > a::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width:100%;
+    height: 3px;
+    background-color: #E8676B;
+    border-radius: 1px;
+    animation: slid .3s;
+}
+@keyframes slid{
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 100%
+    }
 }
 .head .logo span{
     font-size: 30px;
@@ -58,21 +161,16 @@ h1,h2,h3,h4,h5,h6{
     margin-left: 4px;
     font-weight: bold;
 }
+
 .head  nav  ul > li > a{
     font-size: 14px;
     font-weight: bold;
-    margin-left: 22px;
-    margin-right: 22px;
     color: #858A90;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
     border-top: 3px solid transparent;
     border-bottom: 3px solid transparent;
     display: block;
-}
-.head  nav  ul > li > a:hover{
-    border-top: 3px solid transparent;
-    border-bottom: 3px solid #E8676B;
 }
 .banner{
     background-image: url("../img/rs-cover.jpg");

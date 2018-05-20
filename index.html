@@ -15,17 +15,35 @@
   </style>
 </head>
 <body>
+  <div class="loading active" id="loading">
+  </div>
   <div class="head">
-    <div class="headInner  clearfix">
+    <div id="headInner" class="headInner clearfix">
       <a href="#" class="logo">
         <span class="rs">RS</span><span class="card">card</span>
       </a>    
       <nav>
         <ul class="clearfix">
-          <li><a href="#">关于</a></li>
-          <li><a href="#">技能</a></li>
-          <li><a href="#">作品</a></li>
-          <li><a href="#">博客</a></li>
+          <li>
+            <a href="#about">关于</a>
+          </li>
+          <li><a href="#skills">技能</a></li>
+          <li>
+            <a href="#works">作品</a>
+            <ul class="menuSelect">
+              <li>作品1</li>
+              <li>作品2</li>
+              <li>作品3</li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">博客</a>
+            <ul class="menuSelect">
+                <li>博客1</li>
+                <li>博客2</li>
+                <li>博客3</li>
+              </ul>
+          </li>
           <li><a href="#">日历</a></li>
           <li><a href="#">联系方式</a></li>
           <li><a href="#">其他</a></li>
@@ -37,7 +55,7 @@
     <div class="mask"></div>
   </div>
   <main>
-    <div class="userCard">
+    <div id="about" class="userCard">
       <div class="card-top clearfix">
         <div class="card-left">
           <img src="./img/avatar.jpg" alt="head">
@@ -93,7 +111,7 @@
       技能：前端开发，Rails 开发，Node.js 开发。
     </p>
   </main>
-  <section class="skills">
+  <section id="skills" class="skills">
     <h2>
       技能
     </h2>
@@ -138,7 +156,7 @@
       </li>
     </ul>
   </section>
-  <section class="productions">
+  <section id="works" class="productions">
     <h2>
       作品集
     </h2>
@@ -175,5 +193,39 @@
       </div>
     </div>
   </section>
+  <script>
+    setTimeout(function(){
+      loading.classList.remove('active')
+    },1000)
+    window.onscroll=function(){
+    if(window.scrollY > 0){
+      headInner.classList.add('active');
+    }
+    else{
+      headInner.classList.remove('active');
+    }
+  }
+  var li=document.querySelectorAll('.head  nav > ul > li');
+  for(var i=0;i<li.length;i++){
+    li[i].onmouseenter=function(x){
+    x.currentTarget.classList.add('active');
+    }
+    li[i].onmouseleave=function(x){
+      x.currentTarget.classList.remove('active');
+    }
+  } 
+  var aTags=document.querySelectorAll('.head  nav > ul > li > a');
+  for(let i=0;i<aTags.length;i++){
+    aTags[i].onclick=function(x){
+      x.preventDefault();
+      let a = x.currentTarget;
+      let href = a.getAttribute('href');
+      let element = document.querySelector(href);
+      let top = element.offsetTop;
+      window.scrollTo(0, top-80);
+    }
+  }
+  
+  </script>
 </body>
 </html>
