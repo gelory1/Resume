@@ -6,6 +6,7 @@ body{
     margin: 0;
     padding: 0;
 }
+
 .loading{
     display: none;
     width: 100%;
@@ -129,7 +130,8 @@ h1,h2,h3,h4,h5,h6{
       margin-right: 0%;
     }
   }
-.head  nav > ul > li.active > a::after{
+.head  nav > ul > li.active > a::after,
+.head  nav > ul > li.highlight > a::after{
     content: '';
     display: block;
     position: absolute;
@@ -149,6 +151,14 @@ h1,h2,h3,h4,h5,h6{
         width: 100%
     }
 }
+[data-x].offset{
+    transform: translateY(100px);
+}
+[data-x]{
+    transform: translateY(0);
+    transition: all 0.5s;
+}
+
 .head .logo span{
     font-size: 30px;
     font-family: 'Franklin Gothic Medium';
@@ -325,12 +335,18 @@ section .skills-inner .progressBar{
     height: 5px;
     background-color: #FAE1E1;
     border-radius: 2px;
+    overflow: hidden;
 }
 section .skills-inner .progress{
     height: 100%;
     background-color: #E6686A;
     border-radius: 2px;
     width: 40%;
+    transform: translateX(0);
+    transition: all 1s
+}
+section.skills.offset  .progress{
+    transform: translateX(-100%);
 }
 section .skills-inner li{
     float: left;

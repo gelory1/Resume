@@ -55,7 +55,7 @@
     <div class="mask"></div>
   </div>
   <main>
-    <div id="about" class="userCard">
+    <div data-x id="about" class="userCard">
       <div class="card-top clearfix">
         <div class="card-left">
           <img src="./img/avatar.jpg" alt="head">
@@ -111,7 +111,7 @@
       技能：前端开发，Rails 开发，Node.js 开发。
     </p>
   </main>
-  <section id="skills" class="skills">
+  <section data-x id="skills" class="skills">
     <h2>
       技能
     </h2>
@@ -156,7 +156,7 @@
       </li>
     </ul>
   </section>
-  <section id="works" class="productions">
+  <section data-x id="works" class="productions">
     <h2>
       作品集
     </h2>
@@ -193,10 +193,39 @@
       </div>
     </div>
   </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
   <script>
+    function findCloset(){
+      let specialTags=document.querySelectorAll("[data-x]");
+      let minIndex = 0;
+      let currentTop=window.scrollY;
+      for(var i =1;i<specialTags.length;i++){
+        if(Math.abs(specialTags[i].offsetTop-currentTop) < Math.abs(specialTags[minIndex].offsetTop-currentTop)){
+          minIndex=i;
+        }
+      }
+      specialTags[minIndex].classList.remove('offset');
+      var targetId =specialTags[minIndex].id;
+      var a=document.querySelector('a[href="#'+targetId+'"]');
+      var li=a.parentNode;
+      var child=li.parentNode.children;
+      for(var i=0;i<child.length;i++){
+        child[i].classList.remove('highlight');
+      }
+      li.classList.add('highlight');
+    }
+
+    let specialTags = document.querySelectorAll('[data-x]')
+    for(let i =0;i<specialTags.length; i++){
+      specialTags[i].classList.add('offset')
+    }
+
     setTimeout(function(){
       loading.classList.remove('active')
     },1000)
+    setTimeout(function(){
+      findCloset()
+      },1000); 
     window.onscroll=function(){
     if(window.scrollY > 0){
       headInner.classList.add('active');
@@ -204,6 +233,7 @@
     else{
       headInner.classList.remove('active');
     }
+    findCloset();
   }
   var li=document.querySelectorAll('.head  nav > ul > li');
   for(var i=0;i<li.length;i++){
@@ -222,10 +252,23 @@
       let href = a.getAttribute('href');
       let element = document.querySelector(href);
       let top = element.offsetTop;
-      window.scrollTo(0, top-80);
+      let currentTop=window.scrollY;
+      let targetTop=top-80;
+      function animate(time) {
+        requestAnimationFrame(animate);
+        TWEEN.update(time);
+      }
+      requestAnimationFrame(animate);
+      var coords = {  y: currentTop };
+      var tween = new TWEEN.Tween(coords)
+        .to({  y: targetTop }, 500) 
+        .easing(TWEEN.Easing.Cubic.InOut) 
+        .onUpdate(function() { 
+            window.scrollTo(0,coords.y)
+        })
+        .start();
     }
-  }
-  
+  } 
   </script>
 </body>
 </html>
