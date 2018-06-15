@@ -1,33 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>耿朋的简历</title>
   <link rel="stylesheet" href="./css/style.css">
   <script src="//at.alicdn.com/t/font_655225_0gwqhjuyi9wo2yb9.js"></script>
-  <style type="text/css">
-    .icon{
-      width: 1em; height: 1em;
-       vertical-align: -0.15em;
-       fill: currentColor;
-       overflow: hidden;
-    }
-  </style>
 </head>
+
 <body>
   <div class="loading active" id="loading">
   </div>
-  <div class="head">
+  <div class="head" id="head">
     <div id="headInner" class="headInner clearfix">
       <a href="#" class="logo">
-        <span class="rs">RS</span><span class="card">card</span>
-      </a>    
+        <span class="rs">RS</span>
+        <span class="card">card</span>
+      </a>
       <nav>
         <ul class="clearfix">
           <li>
             <a href="#about">关于</a>
           </li>
-          <li><a href="#skills">技能</a></li>
+          <li>
+            <a href="#skills">技能</a>
+          </li>
           <li>
             <a href="#works">作品</a>
             <ul class="menuSelect">
@@ -39,14 +36,20 @@
           <li>
             <a href="#">博客</a>
             <ul class="menuSelect">
-                <li>博客1</li>
-                <li>博客2</li>
-                <li>博客3</li>
-              </ul>
+              <li>博客1</li>
+              <li>博客2</li>
+              <li>博客3</li>
+            </ul>
           </li>
-          <li><a href="#">日历</a></li>
-          <li><a href="#">联系方式</a></li>
-          <li><a href="#">其他</a></li>
+          <li>
+            <a href="#">日历</a>
+          </li>
+          <li>
+            <a href="#">联系方式</a>
+          </li>
+          <li>
+            <a href="#">其他</a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -83,22 +86,22 @@
         <a href="#">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-zhihu"></use>
-        </svg> 
+          </svg>
         </a>
         <a href="#">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-weibo"></use>
-        </svg>
+          </svg>
         </a>
         <a href="#">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-github"></use>
-        </svg>
+          </svg>
         </a>
         <a href="#">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-weixin"></use>
-        </svg>
+          </svg>
         </a>
       </footer>
     </div>
@@ -106,9 +109,8 @@
       <a class="button" href="/index.html" target="_blank" download>下载网页版简历</a>
     </div>
     <p class="selfIntroduction">
-      耿朋，前端开发设计工程师，
-      擅长于CSS、Javascript、AJAX、Vue、React等前端开发语言及开发框架。<br>
-      技能：前端开发，Rails 开发，Node.js 开发。
+      耿朋，前端开发设计工程师， 擅长于CSS、Javascript、AJAX、Vue、React等前端开发语言及开发框架。
+      <br> 技能：前端开发，Rails 开发，Node.js 开发。
     </p>
   </main>
   <section data-x id="skills" class="skills">
@@ -127,32 +129,32 @@
       <li>
         <h3>JavaScript</h3>
         <div class="progressBar">
-            <div class="progress" style="width: 75%"></div>
+          <div class="progress" style="width: 75%"></div>
         </div>
       </li>
       <li>
         <h3>jQuery</h3>
-          <div class="progressBar">
-              <div class="progress" style="width: 80%"></div>
-          </div>
+        <div class="progressBar">
+          <div class="progress" style="width: 80%"></div>
+        </div>
       </li>
       <li>
         <h3>Vue</h3>
-          <div class="progressBar">
-              <div class="progress" style="width: 70%"></div>
-          </div>
+        <div class="progressBar">
+          <div class="progress" style="width: 70%"></div>
+        </div>
       </li>
       <li>
         <h3>React</h3>
-          <div class="progressBar">
-              <div class="progress" style="width: 70%"></div>
-          </div>
+        <div class="progressBar">
+          <div class="progress" style="width: 70%"></div>
+        </div>
       </li>
       <li>
         <h3>HTTP</h3>
-          <div class="progressBar">
-              <div class="progress" style="width: 60%"></div>
-          </div>
+        <div class="progressBar">
+          <div class="progress" style="width: 60%"></div>
+        </div>
       </li>
     </ul>
   </section>
@@ -170,105 +172,24 @@
         <div id="barPro" class="bar-inner1"></div>
       </div>
     </nav>
-    <script>
-      pro1.onclick=function(){
-        barPro.className="bar-inner1"
-      }
-      pro2.onclick=function(){
-        barPro.className="bar-inner2"
-      }
-      pro3.onclick=function(){
-        barPro.className="bar-inner3"
-      }
-    </script>
+
     <div class="jobs">
-      <div class="big">
-        <img src="./img/1.jpg">
+      <div id="canvasImg" class="big">
+        <img src="./画板.jpg">
       </div>
-      <div class="small1">
-          <img src="./img/2.jpg">
+      <div id="bookmarksImg" class="small1">
+        <img src="./导航.png">
       </div>
-      <div class="small2">
-          <img src="./img/3.jpg">
+      <div id="bannerImg" class="small2">
+        <img src="./轮播.png">
       </div>
     </div>
+
   </section>
+  <script src="./js/jobs.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
-  <script>
-    function findCloset(){
-      let specialTags=document.querySelectorAll("[data-x]");
-      let minIndex = 0;
-      let currentTop=window.scrollY;
-      for(var i =1;i<specialTags.length;i++){
-        if(Math.abs(specialTags[i].offsetTop-currentTop) < Math.abs(specialTags[minIndex].offsetTop-currentTop)){
-          minIndex=i;
-        }
-      }
-      specialTags[minIndex].classList.remove('offset');
-      var targetId =specialTags[minIndex].id;
-      var a=document.querySelector('a[href="#'+targetId+'"]');
-      var li=a.parentNode;
-      var child=li.parentNode.children;
-      for(var i=0;i<child.length;i++){
-        child[i].classList.remove('highlight');
-      }
-      li.classList.add('highlight');
-    }
-
-    let specialTags = document.querySelectorAll('[data-x]')
-    for(let i =0;i<specialTags.length; i++){
-      specialTags[i].classList.add('offset')
-    }
-
-    setTimeout(function(){
-      loading.classList.remove('active')
-    },1000)
-    setTimeout(function(){
-      findCloset()
-      },1000); 
-    window.onscroll=function(){
-    if(window.scrollY > 0){
-      headInner.classList.add('active');
-    }
-    else{
-      headInner.classList.remove('active');
-    }
-    findCloset();
-  }
-  var li=document.querySelectorAll('.head  nav > ul > li');
-  for(var i=0;i<li.length;i++){
-    li[i].onmouseenter=function(x){
-    x.currentTarget.classList.add('active');
-    }
-    li[i].onmouseleave=function(x){
-      x.currentTarget.classList.remove('active');
-    }
-  } 
-  var aTags=document.querySelectorAll('.head  nav > ul > li > a');
-  for(let i=0;i<aTags.length;i++){
-    aTags[i].onclick=function(x){
-      x.preventDefault();
-      let a = x.currentTarget;
-      let href = a.getAttribute('href');
-      let element = document.querySelector(href);
-      let top = element.offsetTop;
-      let currentTop=window.scrollY;
-      let targetTop=top-80;
-      function animate(time) {
-        requestAnimationFrame(animate);
-        TWEEN.update(time);
-      }
-      requestAnimationFrame(animate);
-      var coords = {  y: currentTop };
-      var tween = new TWEEN.Tween(coords)
-        .to({  y: targetTop }, 500) 
-        .easing(TWEEN.Easing.Cubic.InOut) 
-        .onUpdate(function() { 
-            window.scrollTo(0,coords.y)
-        })
-        .start();
-    }
-  } 
-  </script>
+  <script src="./js/scroll.js"></script>
+  <script src="./js/headanimate.js"></script>
 </body>
+
 </html>

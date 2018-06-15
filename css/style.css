@@ -6,7 +6,12 @@ body{
     margin: 0;
     padding: 0;
 }
-
+.icon{
+    width: 1em; height: 1em;
+     vertical-align: -0.15em;
+     fill: currentColor;
+     overflow: hidden;
+  }
 .loading{
     display: none;
     width: 100%;
@@ -406,18 +411,39 @@ section.productions .jobs{
     position: relative;
     width: 100%;
 }
-section.productions .jobs .big{
+section.productions .jobs .big img{
     position: absolute;
     top: 0;
     left: 0;
+    width: 600px;
+    height: 475px;
 }
-section.productions .jobs .small1{
+section.productions .jobs .small1 img{
     position: absolute;
     right: 0;
     top: 0;
+    width: 300px;
 }
-section.productions .jobs .small2{
+section.productions .jobs .small2 img{
     position: absolute;
     right: 0;
-    top: 311px;
+    top: 175px;
+    width: 300px;
+}
+section.productions .jobs{
+    margin-bottom:700px;
+}
+section.productions .jobs img{
+    cursor: pointer;
+}
+#canvasImg.hid,#bookmarksImg.hid,#bannerImg.hid{
+    display: none;
+}
+#canvasImg img.active{
+    width: 300px;
+    height:300px;
+}
+#bannerImg img.active{
+    left: 0;
+    top:0;
 }
