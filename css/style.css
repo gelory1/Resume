@@ -430,10 +430,27 @@ section.productions .jobs .small2 img{
     width: 300px;
 }
 section.productions .jobs{
-    margin-bottom:700px;
+    margin-bottom:530px;
 }
 section.productions .jobs img{
     cursor: pointer;
+}
+section.postMessage h2{
+    margin-bottom: 30px;
+}
+section.postMessage ul{
+    max-width: 910px;
+    margin: 0 auto;
+    border-top: 1px solid #ddd;
+}
+section.postMessage ul li{
+    padding: 15px 20px;
+    border-bottom: 1px solid #ddd;
+    background-color: white;
+}
+section.postMessage form{
+    width: 910px;
+    margin: 20px auto;
 }
 #canvasImg.hid,#bookmarksImg.hid,#bannerImg.hid{
     display: none;

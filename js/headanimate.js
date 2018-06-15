@@ -3,8 +3,10 @@
 
     var controller = {
         view: null,
+        li:null,
         init: function (view) {
             this.view = view;
+            this.li = view.querySelectorAll('nav > ul > li');
             this.bindEvents();
         },
         bindEvents: function () {
@@ -12,12 +14,11 @@
             this.scrollEvent();
         },
         activeEvent: function () {
-            let li = this.view.querySelectorAll('nav > ul > li');
-            for (let i = 0; i < li.length; i++) {
-                li[i].onmouseenter = function (x) {
+            for (let i = 0; i < this.li.length; i++) {
+                this.li[i].onmouseenter = function (x) {
                     x.currentTarget.classList.add('active');
                 }
-                li[i].onmouseleave = function (x) {
+                this.li[i].onmouseleave = function (x) {
                     x.currentTarget.classList.remove('active');
                 }
             }
