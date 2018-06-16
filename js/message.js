@@ -1,38 +1,73 @@
-var APP_ID = 'xekLlucVRjXiyCFJqJR6uDm5-gzGzoHsz';
-var APP_KEY = 'XSDrYop2HDGDnXhCEI6izipQ';
+!function () {
+    var view = document.querySelector('section.postMessage');
+    var model = {
+        init:function(){
+            var APP_ID = 'xekLlucVRjXiyCFJqJR6uDm5-gzGzoHsz';
+            var APP_KEY = 'XSDrYop2HDGDnXhCEI6izipQ';
 
-AV.init({
-    appId: APP_ID,
-    appKey: APP_KEY
-});
+            AV.init({
+                appId: APP_ID,
+                appKey: APP_KEY
+            });
+        },
+        fetch: function () {
+            var query = new AV.Query('Message');
+            return query.find()
+        },
+        save: function (content,name) {
+            var Message = AV.Object.extend('Message');
+            var message = new Message();
+            return message.save({
+                'content': content,
+                'name': name
+            })
+        }
+    };
+    var contoller = {
+        view: null,
+        model: null,
+        ulList: null,
+        myForm: null,
+        init: function (view,model) {
+            this.view = view;
+            this.model = model;
+            this.ulList = view.querySelector('ul');
+            this.myForm = view.querySelector('form.messageForm');
+            this.model.init();
+            this.loadMessages();
+            this.bindEvents();
+        },
+        loadMessages: function () {
+            this.model.fetch().then((messages) => {
+                let array = messages.map((item) => item.attributes)
+                array.forEach((element) => {
+                    let li = document.createElement('li');
+                    li.innerText = `${element.name}: ${element.content}`
+                    this.ulList.appendChild(li)
+                });
+            });
+        },
+        bindEvents: function(){
+            this.myForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                this.saveMessage();
+            })
+        },
+        saveMessage: function(){
+            var content =this.myForm.querySelector('input[name=content]').value
+            var name = this.myForm.querySelector('input[name=name]').value
+            this.model.save(content,name).then((object) => {
+                let li = document.createElement('li');
+                li.innerText = `${object.attributes.name}: ${object.attributes.content}`
+                this.ulList.appendChild(li);
+                this.myForm.querySelector('input[name=content]').value = '';
+            }, function (error) {
+                console.log(error)
+            }).then(function () { }, function (error) {
+                console.log(error)
+            })
+        }
 
-var query = new AV.Query('Message');
-  query.find().then(function (messages) {
-    let array = messages.map((item) => item.attributes)
-    array.forEach(element => {
-        let li = document.createElement('li');
-        let ulList = document.querySelector('section.postMessage ul')
-        li.innerText = `${element.name}: ${element.content}`
-        ulList.appendChild(li)
-    });
-    
-  });
-
-var Message = AV.Object.extend('Message');
-var message = new Message();
-var myForm = document.querySelector('section.postMessage form.messageForm');
-myForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var content = myForm.querySelector('input[name=content]').value
-    var name = myForm.querySelector('input[name=name]').value
-    message.save({
-        content: content,
-        name: name
-    }).then(function (object) {
-        let li = document.createElement('li');
-        let ulList = document.querySelector('section.postMessage ul')
-        li.innerText = `${object.attributes.name}: ${object.attributes.content}`
-        ulList.appendChild(li);
-        myForm.querySelector('input[name=content]').value = '';
-    })
-})
+    };
+    contoller.init(view,model);
+}.call()
