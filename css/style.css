@@ -187,8 +187,14 @@ h1,h2,h3,h4,h5,h6{
     border-bottom: 3px solid transparent;
     display: block;
 }
+.head  nav  ul > li ul li a{
+    font-size: 14px;
+    font-weight: initial;
+    color: black;
+
+}
 .banner{
-    background-image: url("../img/rs-cover.jpg");
+    background-image: url("../img/shridhar-gupta-724669-unsplash.jpg");
     height: 500px;
     background-position: center center;
     background-size: cover;
@@ -206,7 +212,8 @@ h1,h2,h3,h4,h5,h6{
 }
 .userCard,.selfIntroduction,
 section .skills-inner,
-section.productions .jobs{
+section.productions .jobs,
+section.pikachu .pikachu-box{
     max-width: 910px;
     margin-left: auto;
     margin-right: auto;
@@ -240,6 +247,10 @@ section.productions .jobs{
 .userCard .card-top .card-left{
     float: left;
     padding-left: 50px;
+    border-radius: 50%;
+}
+.userCard .card-top .card-left img{
+    width: 250px;
 }
 .userCard .card-top .card-right{
     float: left;
@@ -407,36 +418,69 @@ section.productions nav .bar .bar-inner3{
     width: 120px;
     margin-left: 200px;
 }
-section.productions .jobs{
-    position: relative;
+section.productions .jobs{  
     width: 100%;
+    background-color: white;
+    box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
+    text-align: left;
+    padding: 30px;
+    box-sizing: border-box;
 }
-section.productions .jobs .big img{
-    position: absolute;
-    top: 0;
-    left: 0;
-    
+section.productions .jobs h3{
+    font-weight: bold;
 }
-section.productions .jobs .small1 img{
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 300px;
+section.productions .jobs p{
+    font-size: .9em;
+    color: #9DA0A7;
 }
+section.productions .jobs .job-description{
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+section.productions .jobs .job-description.job1{
+    height: 240px;
+}
+section.productions .jobs .job-description.job2{
+    height: 165px;
+}
+section.productions .jobs .job-description.job3{
+    height: 300px;
+}
+section.productions .jobs .big img,
+section.productions .jobs .small1 img,
 section.productions .jobs .small2 img{
-    position: absolute;
-    right: 0;
-    top: 175px;
     width: 300px;
-}
-section.productions .jobs{
-    margin-bottom:530px;
+    margin-bottom: 10px;
+    margin-right: 10px;
 }
 section.productions .jobs img{
     cursor: pointer;
+    float: left;
 }
+section.productions .jobs div{
+    margin-top: 10px;
+}
+section.pikachu > .pikachu-box{
+    box-sizing: border-box;
+    padding: 30px;
+    background-color: white;
+    box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75); 
+}
+section.pikachu h2{
+    margin: 50px 0;
+}
+section.pikachu > .pikachu-box iframe{
+    border: 1px solid black;
+    padding: 10px;
+    width: 830px;
+    height: 500px;
+}
+
 section.postMessage h2{
-    margin-bottom: 30px;
+    margin: 50px 0;
 }
 section.postMessage ul{
     max-width: 910px;

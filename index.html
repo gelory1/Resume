@@ -14,8 +14,8 @@
   <div class="head" id="head">
     <div id="headInner" class="headInner clearfix">
       <a href="#" class="logo">
-        <span class="rs">RS</span>
-        <span class="card">card</span>
+        <span class="rs">GENG</span>
+        <span class="card">PENG</span>
       </a>
       <nav>
         <ul class="clearfix">
@@ -28,27 +28,26 @@
           <li>
             <a href="#works">作品</a>
             <ul class="menuSelect">
-              <li>作品1</li>
-              <li>作品2</li>
-              <li>作品3</li>
+              <li><a href="//gelory1.github.io/myCanvas/index.html" target="_blank">我的画板</a></li>
+              <li><a href="//gelory1.github.io/myBookmarks/index.html"  target="_blank">网页导航</a></li>
+              <li><a href="//gelory1.github.io/myBanner/index2.html"  target="_blank">轮播demo</a></li>
             </ul>
           </li>
           <li>
             <a href="#">博客</a>
             <ul class="menuSelect">
-              <li>博客1</li>
-              <li>博客2</li>
-              <li>博客3</li>
+              <li><a href="//www.zhihu.com/people/geng-peng-88-70/posts" target="_blank">知乎博客</a></li>
+              <li><a href="//gelory1.github.io" target="_blank">Hexo博客</a></li>
             </ul>
           </li>
           <li>
-            <a href="#">日历</a>
+            <a href="#pikachu">皮卡丘</a>
           </li>
           <li>
             <a href="#">联系方式</a>
           </li>
           <li>
-            <a href="#">其他</a>
+            <a href="#postMessage">留言</a>
           </li>
         </ul>
       </nav>
@@ -61,7 +60,7 @@
     <div data-x id="about" class="userCard">
       <div class="card-top clearfix">
         <div class="card-left">
-          <img src="./img/avatar.jpg" alt="head">
+          <img src="./img/gp1.jpg" alt="head">
         </div>
         <div class="card-right">
           <span class="welcome">Hello
@@ -83,17 +82,17 @@
         </div>
       </div>
       <footer>
-        <a href="#">
+        <a href="//www.zhihu.com/people/geng-peng-88-70/posts">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-zhihu"></use>
           </svg>
         </a>
-        <a href="#">
+        <a href="//weibo.com/u/1824544181">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-weibo"></use>
           </svg>
         </a>
-        <a href="#">
+        <a href="//github.com/gelory1">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-github"></use>
           </svg>
@@ -109,8 +108,8 @@
       <a class="button" href="/index.html" target="_blank" download>下载网页版简历</a>
     </div>
     <p class="selfIntroduction">
-      耿朋，前端开发设计工程师， 擅长于CSS、Javascript、AJAX、Vue、React等前端开发语言及开发框架。
-      <br> 技能：前端开发，Rails 开发，Node.js 开发。
+      耿朋，前端开发设计工程师， 熟悉HTML5/CSS3、Javascript、jQuery、AJAX、Vue等前端开发语言及开发框架。
+      <br> 技能：前端开发，小程序制作。
     </p>
   </main>
   <section data-x id="skills" class="skills">
@@ -129,29 +128,29 @@
       <li>
         <h3>JavaScript</h3>
         <div class="progressBar">
-          <div class="progress" style="width: 75%"></div>
+          <div class="progress" style="width: 80%"></div>
         </div>
       </li>
       <li>
         <h3>jQuery</h3>
         <div class="progressBar">
-          <div class="progress" style="width: 80%"></div>
+          <div class="progress" style="width: 70%"></div>
         </div>
       </li>
       <li>
         <h3>Vue</h3>
         <div class="progressBar">
-          <div class="progress" style="width: 70%"></div>
+          <div class="progress" style="width: 65%"></div>
         </div>
       </li>
       <li>
-        <h3>React</h3>
+        <h3>移动端页面</h3>
         <div class="progressBar">
-          <div class="progress" style="width: 70%"></div>
+          <div class="progress" style="width: 85%"></div>
         </div>
       </li>
       <li>
-        <h3>HTTP</h3>
+        <h3>MVC&amp;MVVM框架</h3>
         <div class="progressBar">
           <div class="progress" style="width: 60%"></div>
         </div>
@@ -174,28 +173,65 @@
     </nav>
 
     <div class="jobs">
-      <div id="canvasImg" class="big">
+      <div id="canvasImg" class="big clearfix">
         <img src="./img/画板.jpg">
+        <div class="job-description job1">
+            <h3>项目名称：我的画板</h3>
+            <br/>
+            <p>项目描述：该项目使用原生JS实现，主要调用 Canvas API，
+              实现了划线、调色、橡皮擦、保存等功能。完全由我独立开发。移动端正常访问。
+            </p>
+            <br/>
+            <p>
+              关键词：canvas 原生JS 自适应
+            </p>
+        </div> 
       </div>
-      <div id="bookmarksImg" class="small1">
+      <div id="bookmarksImg" class="small1 clearfix">
         <img src="./img/导航.png">
+        <div class="job-description job2">
+            <h3>项目名称：网页导航</h3>
+            <br/>
+            <p>项目描述：该项目使用原生JS实现，主要通过监听用户点击键盘事件来进行页面的跳转，通过localstorage进行网址的本地存储。完全由我独立开发。</p>
+            <br/>
+                <p>
+                  关键词：缓存 原生JS
+                </p>
+        </div>
       </div>
-      <div id="bannerImg" class="small2">
+      <div id="bannerImg" class="small2 clearfix">
         <img src="./img/轮播.png">
+        <div class="job-description job3">
+            <h3>项目名称：轮播demo</h3>
+            <br/>
+            <p>项目描述：该项目使用jquery实现，通过定时器、按钮监听事件等实现无缝轮播。该项目用到了简单的异步与回调函数，完全由我独立开发。</p>
+            <br/>
+                <p>
+                  关键词：jQuery 异步 回调
+                </p>
+        </div>
       </div>
     </div>
   </section>
+  <section data-x id="pikachu" class="pikachu">
+    <h2>做一只皮卡丘</h2>
+    <div class="pikachu-box">
+        <iframe src="//gelory1.github.io/make-a-pikachu/index.html" frameborder="0"></iframe>
+    </div>
+  </section>
 
-  <section class="postMessage">
+
+
+  <section data-x id="postMessage" class="postMessage">
     <h2>留言</h2>
-    <ul></ul>
     <form class="messageForm">
       <label>姓名</label>
       <input type="text" name="name">
       <label>留言</label>
-      <input type="text" name="content">
+      <input type="text" name="content" placeholder ="欢迎留言哦~~">
       <input type="submit" value="提交">
     </form>
+    <ul></ul>
   </section>
   <script src="./js/jobs.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
