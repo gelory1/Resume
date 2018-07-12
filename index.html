@@ -34,17 +34,17 @@
             </ul>
           </li>
           <li>
-            <a href="#">博客</a>
+            <a href="#blog">博客</a>
             <ul class="menuSelect">
               <li><a href="//www.zhihu.com/people/geng-peng-88-70/posts" target="_blank">知乎博客</a></li>
               <li><a href="//gelory1.github.io" target="_blank">Hexo博客</a></li>
             </ul>
           </li>
           <li>
-            <a href="#pikachu">皮卡丘</a>
+            <a href="#pikachu">皮卡丘动画</a>
           </li>
           <li>
-            <a href="#">联系方式</a>
+            <a href="#contact">联系方式</a>
           </li>
           <li>
             <a href="#postMessage">留言</a>
@@ -58,7 +58,7 @@
   </div>
   <main>
     <div data-x id="about" class="userCard">
-      <div class="card-top clearfix">
+      <div class="card-top">
         <div class="card-left">
           <img src="./img/gp1.jpg" alt="head">
         </div>
@@ -78,26 +78,30 @@
             <dd>917589697@qq.com</dd>
             <dt>手机号</dt>
             <dd>18530852241</dd>
+            <dt>毕业院校</dt>
+            <dd>华北水利水电大学</dd>
+            <dt>英语等级</dt>
+            <dd>英语六级</dd>
           </dl>
         </div>
       </div>
       <footer>
-        <a href="//www.zhihu.com/people/geng-peng-88-70/posts">
+        <a href="//www.zhihu.com/people/geng-peng-88-70/posts" target="_blank">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-zhihu"></use>
           </svg>
         </a>
-        <a href="//weibo.com/u/1824544181">
+        <a href="//weibo.com/u/1824544181" target="_blank">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-weibo"></use>
           </svg>
         </a>
-        <a href="//github.com/gelory1">
+        <a href="//github.com/gelory1" target="_blank">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-github"></use>
           </svg>
         </a>
-        <a href="#">
+        <a href="//www.zhihu.com/pin/1000689430482599936" target="_blank">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-weixin"></use>
           </svg>
@@ -105,7 +109,7 @@
       </footer>
     </div>
     <div class="button-wrapper">
-      <a class="button" href="/index.html" target="_blank" download>下载网页版简历</a>
+      <a class="button" href="./耿朋的简历.pdf" target="_blank" download>下载PDF简历</a>
     </div>
     <p class="selfIntroduction">
       耿朋，前端开发设计工程师， 熟悉HTML5/CSS3、Javascript、jQuery、AJAX、Vue等前端开发语言及开发框架。
@@ -213,23 +217,37 @@
       </div>
     </div>
   </section>
+  <section data-x id="blog" class="blog">
+    <div class="blog-box">
+        <a href="//www.zhihu.com/people/geng-peng-88-70/posts" target="_blank">参观我的博客</a>
+    </div>
+    
+  </section>
   <section data-x id="pikachu" class="pikachu">
     <h2>做一只皮卡丘</h2>
     <div class="pikachu-box">
         <iframe src="//gelory1.github.io/make-a-pikachu/index.html" frameborder="0"></iframe>
     </div>
   </section>
-
-
-
+  <section data-x id="contact" class="contact">
+    <h2>联系方式</h2>
+    <div class="contact-box">
+      <ul>
+        <li class="contactClass">My email</li>
+        <li class="contactContent">917589697@qq.com</li>
+        <li class="contactClass">My telphone</li>
+        <li class="contactContent">18530852241</li>
+      </ul>
+      <div class="weichat">My weichat</div>
+      <img src="./img/weixin.jpg" alt="917589697">
+    </div>
+  </section>
   <section data-x id="postMessage" class="postMessage">
     <h2>留言</h2>
     <form class="messageForm">
-      <label>姓名</label>
-      <input type="text" name="name">
-      <label>留言</label>
-      <input type="text" name="content" placeholder ="欢迎留言哦~~">
-      <input type="submit" value="提交">
+      <input type="text" name="name" placeholder=" 您的姓名~~" class="inputName">
+      <input type="text" name="content" placeholder =" 欢迎留言哦~~" class="inputContent">
+      <input type="submit" value="提交" class="inputSubmit">
     </form>
     <ul></ul>
   </section>

@@ -1,7 +1,7 @@
 !function () {
     var view = document.querySelector('section.postMessage');
     var model = {
-        init:function(){
+        init: function () {
             var APP_ID = 'xekLlucVRjXiyCFJqJR6uDm5-gzGzoHsz';
             var APP_KEY = 'XSDrYop2HDGDnXhCEI6izipQ';
 
@@ -12,9 +12,13 @@
         },
         fetch: function () {
             var query = new AV.Query('Message');
+            var now = new Date();
+            query.lessThanOrEqualTo('createdAt', now);//查询今天之前创建的 Todo
+            query.limit(10);
+            query.descending('createdAt');
             return query.find()
         },
-        save: function (content,name) {
+        save: function (content, name) {
             var Message = AV.Object.extend('Message');
             var message = new Message();
             return message.save({
@@ -28,7 +32,7 @@
         model: null,
         ulList: null,
         myForm: null,
-        init: function (view,model) {
+        init: function (view, model) {
             this.view = view;
             this.model = model;
             this.ulList = view.querySelector('ul');
@@ -47,19 +51,19 @@
                 });
             });
         },
-        bindEvents: function(){
+        bindEvents: function () {
             this.myForm.addEventListener('submit', (e) => {
                 e.preventDefault();
                 this.saveMessage();
             })
         },
-        saveMessage: function(){
-            var content =this.myForm.querySelector('input[name=content]').value
+        saveMessage: function () {
+            var content = this.myForm.querySelector('input[name=content]').value
             var name = this.myForm.querySelector('input[name=name]').value
-            this.model.save(content,name).then((object) => {
+            this.model.save(content, name).then((object) => {
                 let li = document.createElement('li');
                 li.innerText = `${object.attributes.name}: ${object.attributes.content}`
-                this.ulList.appendChild(li);
+                this.ulList.prepend(li);
                 this.myForm.querySelector('input[name=content]').value = '';
             }, function (error) {
                 console.log(error)
@@ -69,5 +73,5 @@
         }
 
     };
-    contoller.init(view,model);
+    contoller.init(view, model);
 }.call()
