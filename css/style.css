@@ -109,7 +109,6 @@ h1,h2,h3,h4,h5,h6{
     position: relative;
     margin-left: 22px;
     margin-right: 22px;
-    position: relative;
 }
 .head  nav > ul > li .menuSelect{
     display: none;
@@ -207,7 +206,6 @@ h1,h2,h3,h4,h5,h6{
 }
 .userCard{
     background-color: white;
-    border: 1px soild red;
     margin-top: -330px;
     box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
 }
@@ -578,14 +576,14 @@ section.postMessage form input.inputSubmit{
 section.postMessage form input.inputSubmit:hover{
     background-color: #FFA309;
 }
-#canvasImg.hid,#bookmarksImg.hid,#bannerImg.hid{
+#canvasImg.hid,#bookmarksImg.hid,#musicImg.hid,#weiAppImg.hid,#vueClientImg.hid{
     display: none;
 }
 #canvasImg img.active{
     width: 300px;
     height:300px;
 }
-#bannerImg img.active{
+#musicImg img.active{
     left: 0;
     top:0;
 }
