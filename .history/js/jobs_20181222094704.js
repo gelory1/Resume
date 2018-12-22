@@ -13,6 +13,7 @@
         document.querySelector('#canvasImg img').classList.remove('active');
     }
     pro2.onclick = function () {
+        alert()
         barPro.className = "bar-inner2"
         canvasImg.classList.remove('hid');
         bookmarksImg.classList.add('hid');

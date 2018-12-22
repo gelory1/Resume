@@ -581,6 +581,7 @@ section.postMessage form input.inputSubmit:hover{
 }
 #canvasImg img.active{
     width: 300px;
+    height:300px;
 }
 #musicImg img.active{
     left: 0;

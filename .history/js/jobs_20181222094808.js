@@ -3,6 +3,7 @@
     let bookmarksImg = document.querySelector('#bookmarksImg');
     let bannerImg = document.querySelector('#bannerImg');
     pro1.onclick = function () {
+        console.log(111)
         barPro.className = "bar-inner1"
         canvasImg.classList.remove('hid');
         bookmarksImg.classList.remove('hid');

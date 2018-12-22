@@ -19,7 +19,7 @@
         musicImg.classList.remove('hid');
         vueClientImg.classList.remove('hid');
         weiAppImg.classList.add('hid');
-        document.querySelector('#canvasImg img').classList.add('active');
+        document.querySelector('#canvasImg img').classList.remove('active');
         document.querySelector('#musicImg img').classList.add('active');
     }
     pro3.onclick = function () {
@@ -30,7 +30,7 @@
         vueClientImg.classList.add('hid');
         weiAppImg.classList.remove('hid');
         document.querySelector('#musicImg img').classList.remove('active');
-        document.querySelector('#canvasImg img').classList.remove('active');
+        document.querySelector('#canvasImg img').classList.add('active');
     }
     document.querySelector('#musicImg img').onclick = function () {
         window.open("https://gelory1.github.io/music-demo/src/", "_blank")

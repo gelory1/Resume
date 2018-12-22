@@ -60,6 +60,7 @@
         saveMessage: function () {
             var content = this.myForm.querySelector('input[name=content]').value
             var name = this.myForm.querySelector('input[name=name]').value || '匿名'
+            alert
             if(!content){
                 alert('请输入内容')
                 return

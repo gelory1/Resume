@@ -60,20 +60,21 @@
         saveMessage: function () {
             var content = this.myForm.querySelector('input[name=content]').value
             var name = this.myForm.querySelector('input[name=name]').value || '匿名'
+            alert(content)
             if(!content){
                 alert('请输入内容')
                 return
             }
-            this.model.save(content, name).then((object) => {
-                let li = document.createElement('li');
-                li.innerText = `${object.attributes.name}: ${object.attributes.content}`
-                this.ulList.prepend(li);
-                this.myForm.querySelector('input[name=content]').value = '';
-            }, function (error) {
-                console.log(error)
-            }).then(function () { }, function (error) {
-                console.log(error)
-            })
+            // this.model.save(content, name).then((object) => {
+            //     let li = document.createElement('li');
+            //     li.innerText = `${object.attributes.name}: ${object.attributes.content}`
+            //     this.ulList.prepend(li);
+            //     this.myForm.querySelector('input[name=content]').value = '';
+            // }, function (error) {
+            //     console.log(error)
+            // }).then(function () { }, function (error) {
+            //     console.log(error)
+            // })
         }
 
     };
